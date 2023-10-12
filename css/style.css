@@ -1,0 +1,326 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caprasimo&display=swap');
+
+/* 전체 영역 기본 세팅 */
+* {
+    margin: 0; /* 마진 리셋*/
+    padding: 0; /* 패딩 리셋*/
+    box-sizing: border-box; /* 박스 크기를 지정한 값으로 계산 */
+}
+
+a {
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+ul {
+    list-style: none; /* 리스트 스타일 제거 */
+}
+
+/* container 영역 */
+#container {
+    width: 1200px; /* 컨테이너의 너비 */
+    margin: 0 auto; /* 화면의 중앙에 위치 */}
+
+/* header 영역(로고/네비게이션) */
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+}
+
+/* logo 영역 */
+#logo {
+    float: left; /* 왼쪽으로 정렬 */
+    width: 250px;  /* 로고의 너비 */
+    height: 100px;  /* 로고의 높이 */
+    padding-left: 20px; /* 로고의 왼쪽 패딩 */
+    line-height: 100px; /* 로고의 높이와 같게 설정 */
+}
+#logo h1{
+    font-family: 'Abril Fatface', cursive; /* 구글 제공 글꼴 */
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 -1px 0 #222; /* 글자 그림자 */
+}
+
+/* 네비게이션 영역 */
+nav {
+    float: right; /* 오른쪽으로 정렬 */
+    width: 900px; /* 네비게이션의 너비 */
+    height: 100px; /* 네비게이션의 높이 */
+    padding-top: 40px; /* 네비게이션의 위쪽 패딩(아래 라인에 맞춤) */
+}
+#topMenu {
+    height: 60px; /* 네비게이션의 높이 */
+}
+ /* 메인 메뉴에 대한 style 설정 */
+#topMenu > li {
+    float: left; /* 메뉴 항목 왼쪽으로 정렬 */
+    position: relative; /* 메뉴 항목의 위치를 상대적으로 설정(서브메뉴 absolute로 사용하기 위해) */
+}
+
+#topMenu > li > a {
+    display: block; /* 메뉴 항목의 박스 형식으로 설정 */
+    color: #fff;    /* 글자 색상 */
+    font-weight: 600; /* 글자 굵기 */
+    text-shadow: 0 1px #3f72ca; /* 글자 그림자 */
+    padding: 20px 50px; /* 메뉴 항목의 패딩 */
+}
+
+#topMenu > li > a > span {
+    font-size: 0.5em; /* 글자 크기 */
+}
+
+#topMenu > li> a:hover {
+    color: #000; /* 글자 색상 */
+    background-color: #7f8ba0; /* 배경 색상 */
+}
+
+/* 서브 메뉴에 대한 style 설정 */
+#topMenu > li > ul {
+    display: none; /* 서브 메뉴는 처음에 보이지 않음 */
+    position: absolute; /* 메뉴 항목의 위치를 절대적으로 설정 */
+    width: 160px; /* 서브 메뉴의 너비 */
+    left: 25px; /* 메인 메뉴와 서브 메뉴의 간격을 벌림 */
+    background-color: rgba(255,255,255,0.5); /* 서브 메뉴의 배경 색상(아래가 비치도록 설정) */
+    margin: 0;
+}
+#topMenu > li > ul >li {
+    padding: 10px 10px 10px 30px; /* 서브 메뉴 항목의 패딩 */
+}
+#topMenu > li > ul >li >a {
+    font-size: 14px;
+    padding:  10px;
+    color: #000;
+}
+
+#topMenu > li:hover > ul {
+    display: block; /* 메인 메뉴에 마우스를 올리면 서브 메뉴가 보임 */
+    z-index: 15; /* 메인 메뉴보다 서브 메뉴가 더 위에 보이도록 설정 */
+}
+
+#topMenu > li > ul >li > a:hover {
+    color: red;
+    font-weight: bold;
+}
+
+/**************************/
+/* 이미지 슬라이드 쇼 영역 */
+/**************************/
+
+#slideShow {
+    clear: both; /* float 속성을 해제 */
+    width: 100%; /* 이미지 슬라이드 쇼의 너비 */
+    height: 300px; /* 이미지 슬라이드 쇼의 높이 */
+    overflow: hidden; /* 넘치는 이미지를 숨김 */
+    position: relative; /* 이미지 슬라이드 쇼의 위치를 상대적으로 설정 */
+}
+
+#slides {
+    position: absolute; /* 이미지 슬라이드 쇼의 위치를 절대적으로 설정 */
+}
+
+#slides > img {
+    float: left; /* 왼쪽으로 정렬 */
+    width: 100%; /* 이미지의 너비 */
+}
+
+button {
+    position: absolute; /* 버튼의 위치를 절대적으로 설정 */
+    height: 300px; /* 버튼의 높이 (100%) */  
+    top: 0; /* 버튼의 위쪽 여백을 0으로 설정 */
+    border: none; /* 버튼의 테두리를 없앰 */
+    padding: 20px; /* 버튼의 패딩 */
+    background-color: transparent; /* 버튼의 배경 색상(투명 배경) */
+    color: #fff; /* 버튼의 글자 색상 */
+    font-size: 24px; /* 버튼의 글자 크기 */
+    font-weight: 800; /* 버튼의 글자 굵기 */
+    opacity: 0.5; /* 버튼의 투명도 */
+}
+
+button:hover {
+    background-color: #222; /* 버튼에 마우스를 올리면 배경 색상이 회색으로 변경 */
+    color: #fff; /* 버튼의 글자 색상 */
+    opacity: 0.6; /* 버튼의 투명도 */
+    cursor: pointer; /* 커서 모양을 손가락 모양으로 변경 */
+}
+
+button:focus {
+    outline: none; /* 버튼에 초점이 가면 테두리를 없앰 */
+}
+
+#prev {
+    left: 0; /* 버튼의 왼쪽 여백을 0으로 설정 */
+}
+
+#next {
+    right: 0; /* 버튼의 오른쪽 여백을 0으로 설정 */
+}
+
+/********************************/
+/* 콘텐츠 영역 (탭 메뉴, 퀙 링역) */
+/********************************/
+
+#contents {
+    width: 100%; /* 콘텐츠 영역의 너비 */
+    height: 300px; /* 콘텐츠 영역의 높이 */
+    margin-top: 20px; /* 콘텐츠 영역의 위쪽 여백 */
+}
+
+/* 탭 메뉴 영역 */
+#tabMenu {
+    float: left; /* 왼쪽으로 정렬 */
+    width: 600px; /* 탭 메뉴의 너비 */
+    height: 100%; /* 탭 메뉴의 높이 */
+    margin-top: 10px; /* 탭 메뉴의 위쪽 여백 */
+}
+
+#tabMenu input[type="radio"] {
+    display: none; /* 라디오 버튼을 화면에서 숨김 */
+}
+#tabMenu label {
+    display: inline-block; /* 라벨을 인라인 블록으로 설정(탭을 가로로 배치) */
+    margin: 0 0; /* 라벨의 바깥 여백을 없앰 */
+    padding: 15px 25px; /* 라벨의 안쪽 여백을 설정 */
+    color: #aaa; /* 라벨의 글자 색상 */
+    text-align: center; /* 라벨의 텍스트 정렬 방식 */
+    font-weight: 600; /* 탭 메뉴의 너비 */
+    border: 1px solid transparent; /* 라벨의 테두리를 없앰 */
+}
+
+#tabMenu label:hover {
+    color: #111; /* 라벨에 마우스를 올리면 글자 색상을 검은색으로 변경 */
+    cursor: pointer; /* 커서 모양을 손가락 모양으로 변경 */
+}
+
+#tabMenu input:checked + label{
+    color: red; /* 선택된 라벨의 글자 색상을 빨간색으로 변경 */
+    border: 1px solid #ddd; /* 선택된 라벨의 테두리를 회색으로 설정 */
+    background-color: #eee; /* 선택된 라벨의 배경 색상을 회색으로 설정 */
+}
+
+/* 탭에 대한 내용 스타일 적용 */
+.tabContent {
+    display: none; /* 탭 내용을 처음에는 보이지 않게 함 */
+    padding: 20px 0 0; /* padding-top: 20px;  탭 내용의 위쪽 패딩 */
+    border-top: 1px solid #ddd; /* 탭 내용의 위쪽 테두리 */
+}
+.tabContent h2 {
+    display: none;
+}
+
+#notice ul {
+    list-style: disc; /* 탭 내용의 목록 스타일을 원형으로 설정 */
+    margin-left: 30px; /* 탭 내용의 왼쪽 여백 */
+}
+#notice ul li {
+    font-size: 1em; /* 탭 내용의 글자 크기(16px) */
+    line-height: 2.5;
+}
+
+#gallery ul li {
+    display: inline; /* 탭 내용을 가로로 보이게 함 */
+}
+
+#tab1:checked ~ #notice,   /* 탭1이 선택되면 공지사항을 보이게 함 */
+#tab2:checked ~ #gallery { /* 탭2가 선택되면 갤러리를 보이게 함 */
+    display: block; 
+}
+
+
+/* 퀵 링크 영역 */
+#links {
+    float: left; /* 왼쪽으로 정렬 */
+    width: 600px; /* 퀵 링크의 너비 */
+    height: 100%; /* 퀵 링크의 높이 */
+    margin-top: 20px; /* 퀵 링크의 위쪽 여백 */
+}
+
+#links ul{
+    padding: 0; /* 퀵 링크의 안쪽 여백을 없앰 */
+    overflow: hidden; /* 넘치는 내용을 숨김 */
+}
+#links ul li {
+    float: left ; /* 왼쪽으로 정렬 */
+    width: 33%; /* 퀵 링크의 너비 */
+    text-align: center; /* 퀵 링크의 텍스트 정렬 방식 */
+    margin: 10px 0; /* 퀵 링크의 위쪽/아래쪽 여백 */
+}
+#links ul li span {
+    display: block; /* 퀵 링크의 박스 형식으로 설정 */
+    margin: 0 auto; /* 퀵 링크의 가운데 정렬 */
+    width: 150px; /* 퀵 링크의 너비 */
+    height: 150px; /* 퀵 링크의 높이 */
+    border: 1px solid #ddd; /* 퀵 링크의 테두리 */
+    border-radius: 50%; /* 퀵 링크의 테두리를 둥글게 설정 */
+    line-height: 150px; /* 퀵 링크의 높이와 같게 설정(수직으로 가운데 위치) */
+}
+#quick-icon1 {
+    background-image: url(/images/icon-1.jpg); /* 퀵 링크의 배경 이미지 */
+}
+#quick-icon2 {
+    background-image: url(/images/icon-2.jpg); /* 퀵 링크의 배경 이미지 */
+}
+#quick-icon3 {
+    background-image: url(/images/icon-3.jpg); /* 퀵 링크의 배경 이미지 */
+}
+
+#links ul li a p {
+    margin-top: 15px; /* 퀵 링크의 위쪽 여백 */
+    font-weight: 600; /* 퀵 링크의 글자 굵기 */
+    color: rgb(43, 42, 42); /* 퀵 링크의 글자 색상 */
+}
+
+
+/* footer 영역 */
+footer {
+    clear: both; /* float 속성을 해제 */
+    width: 100%; /* footer의 너비 */
+    height: 100px; /* footer의 높이 */
+    border-top: 2px solid #222; /* footer의 위쪽 테두리 */
+}
+#bottomMenu {
+    width: 100%; /* 하단 메뉴의 너비 */
+    height: 20px; /* 하단 메뉴의 높이 */
+    position: relative; /* 하단 메뉴의 위치를 상대적으로 설정 */
+}
+#bottomMenu ul {
+    margin-top: 15px; /* 하단 메뉴의 위쪽 여백 */
+}
+
+#bottomMenu ul li {
+    float: left; /* 왼쪽으로 정렬 */
+    padding: 5px 2%; /* 하단 메뉴의 패딩 */
+    border-right: 1px solid #635f5f; /* 하단 메뉴의 오른쪽 테두리 */
+}
+#bottomMenu ul li:last-child {
+    border-right: none; /* 하단 메뉴의 마지막 항목의 오른쪽 테두리를 없앰 */
+}
+#bottomMenu ul li a, #bottomMenu ul li a:visited {
+    font-size: 15px;    /* 하단 메뉴의 글자 크기 */
+    color: #5d5b5b;        /* 하단 메뉴의 글자 색상 */
+}
+
+#sns {
+    position: absolute;
+    right: 0; /* 하단 메뉴의 오른쪽 여백을 0으로 설정 */
+}
+
+#sns ul li {
+    border: none; /* 하단 메뉴의 테두리를 없앰 */
+    padding: 5px; /* 하단 메뉴의 패딩 */
+}
+
+#addr {
+    clear: left; /* float 속성을 해제 */
+    margin-top: 35px; /* 하단 메뉴의 위쪽 여백 */
+    margin-left: 20px; /* 하단 메뉴의 왼쪽 여백 */
+}
+#addr p {
+    font-size: 14px; /* 글자 크기 */
+    color: #918f8f; /* 글자 색상 */
+}
+
